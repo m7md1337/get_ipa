@@ -1,5 +1,5 @@
 # get_ipa
- easy way to gat ipa from appstore
+ easy way to get ipa from appstore
 ## ways to get an app
 - by search 
 - by bundel id of the app
