@@ -1,8 +1,6 @@
 lxml
 requests
-re
 wget
-json
-os
 bs4
+BeautifulSoup4
 BeautifulSoup
