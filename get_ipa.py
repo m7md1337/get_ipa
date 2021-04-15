@@ -8,7 +8,8 @@ import wget
 import json
 import os
 from bs4 import BeautifulSoup
-
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
 
 
 def clearr():
@@ -19,7 +20,7 @@ def clearr():
 
 
 def download(idapp):
-    req = requests.get("https://m7md1337.000webhostapp.com/2.php?id={}".format(idapp),headers={"m7md1337":"102"},verify=False)
+    req = requests.get("https://m7md1337.000webhostapp.com/2.php?id={}".format(idapp),headers={"m7md1337":"102"})
     soo = json.loads(req.content)
     if soo["cc"] == "true":
         wget.download(soo["url"], soo["filename"])
@@ -35,7 +36,7 @@ def download(idapp):
 def get_versions(idd):
     url = "https://tools.lancely.tech/apple/app-version/US/{}".format(idd)
 
-    page = requests.get(url,verify=False).text
+    page = requests.get(url).text
     soup = BeautifulSoup(page, 'lxml')
     check = soup.find_all('code')[0].get_text()
     finda = soup.find_all('tr', attrs={'style': 'cursor:auto;'})
@@ -49,7 +50,7 @@ def get_versions(idd):
             count += 1
 
         askme = input("\n\nplease Enter number : ")
-        req = requests.get("https://m7md1337.000webhostapp.com/2.php?id={}&version={}".format(idd,reee[int(askme)]),headers={"m7md1337":"102"},verify=False)
+        req = requests.get("https://m7md1337.000webhostapp.com/2.php?id={}&version={}".format(idd,reee[int(askme)]),headers={"m7md1337":"102"})
         soo = json.loads(req.content)
         if soo["cc"] == "true":
             wget.download(soo["url"], "v-"+version[int(askme)]+"-"+soo["filename"])
@@ -68,7 +69,7 @@ def get_versions(idd):
 
 
 def byid(byyidd):
-    req1 = requests.get("https://itunes.apple.com/lookup?id={}".format(byyidd),verify=False)
+    req1 = requests.get("https://itunes.apple.com/lookup?id={}".format(byyidd))
     bbo22 = json.loads(req1.content)
     if bbo22["resultCount"] == 0:
         print("you but a wrong id try again or another way")
@@ -92,7 +93,7 @@ def byid(byyidd):
 
 
 def seacrh(terms):
-    re = requests.get("https://itunes.apple.com/search?term=" + terms + "&media=software",verify=False)
+    re = requests.get("https://itunes.apple.com/search?term=" + terms + "&media=software")
     dataseach = json.loads(re.content)
     if dataseach["resultCount"] == 0:
         print("we can't find it try again or another way ")
@@ -124,7 +125,7 @@ def seacrh(terms):
             print("\n Not Valid Choice Try again")
 
 def bybundel(bundel):
-    req = requests.get("https://itunes.apple.com/lookup?bundleId={}".format(bundel),verify=False)
+    req = requests.get("https://itunes.apple.com/lookup?bundleId={}".format(bundel))
     bbo = json.loads(req.content)
     if bbo["resultCount"] == 0:
         print("you but a wrong bundelid")
