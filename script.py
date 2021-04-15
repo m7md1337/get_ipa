@@ -64,7 +64,7 @@ def get_versions(idd):
             exit()
     elif check == "0":
         clearr()
-        print("no versions availbae for this app go again chose last version")
+        print("no versions available for this app go again chose last version")
 
 
 def byid(byyidd):
@@ -77,7 +77,7 @@ def byid(byyidd):
             print("name: {} - bundel id: ({}) id: {}".format( zz11["trackName"], zz11["bundleId"], zz11["trackId"]))
         print("""
             1.download last version 
-            2.download specefic version 
+            2.download specific version 
             """)
         bb6 = input("1 or 2 ?: ")
         if bb6 == "1":
@@ -105,11 +105,11 @@ def seacrh(terms):
             mylist.append(zz["trackId"])
             count += 1
 
-        ask = int(input("\n\nPres Enter A Numpre : "))
+        ask = int(input("\n\nplease Enter A number : "))
         clearr()
         print("""
     1.download last version 
-    2.download specefic version 
+    2.download specific version 
     """)
         bb6 = input("1 or 2 ?: ")
         if bb6 == "1":
@@ -133,7 +133,7 @@ def bybundel(bundel):
             print("name: {} - bundel id: ({}) id: {}".format( zz["trackName"], zz["bundleId"], zz["trackId"]))
         print("""
             1.download last version 
-            2.download specefic version 
+            2.download specific version 
             """)
         bb6 = input("1 or 2 ?: ")
         if bb6 == "1":
