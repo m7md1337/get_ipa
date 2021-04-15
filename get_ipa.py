@@ -24,7 +24,7 @@ def download(idapp):
     soo = json.loads(req.content)
     if soo["cc"] == "true":
         wget.download(soo["url"], soo["filename"])
-        print("file has been downloaded", soo["filename"])
+        print("\n\n\n","file has been downloaded", soo["filename"])
         exit()
     elif soo["cc"] == "false":
         print(soo["massage"],"try another version")
