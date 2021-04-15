@@ -26,7 +26,7 @@ def download(idapp):
         print("file has been downloaded", soo["filename"])
         exit()
     elif soo["cc"] == "false":
-        print(soo["massage"])
+        print(soo["massage"],"try another version")
     else:
         print("error : something happens ")
         exit()
@@ -52,12 +52,12 @@ def get_versions(idd):
         req = requests.get("https://m7md1337.000webhostapp.com/2.php?id={}&version={}".format(idd,reee[int(askme)]),headers={"m7md1337":"102"})
         soo = json.loads(req.content)
         if soo["cc"] == "true":
-            print(version[int(askme)])
             wget.download(soo["url"], "v-"+version[int(askme)]+"-"+soo["filename"])
 
             print("\n\n\n","file has been downloaded", "v-"+version[int(askme)]+"-"+soo["filename"])
             exit()
         elif soo["cc"] == "false":
+
             print(soo["massage"])
         else:
             print("error : something happens ")
