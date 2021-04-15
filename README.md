@@ -10,8 +10,13 @@
 
 
 ## Installation
+- download the tool
+```
+git clone https://github.com/m7md1337/get_ipa.git
+```
 - install Python3 libraries
 ```
+cd get_ipa
 pip3 install -r requirements.txt
 ```
 - run the script with python 3 
