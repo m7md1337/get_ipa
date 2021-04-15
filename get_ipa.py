@@ -19,7 +19,7 @@ def clearr():
 
 
 def download(idapp):
-    req = requests.get("https://m7md1337.000webhostapp.com/2.php?id={}".format(idapp),headers={"m7md1337":"102"})
+    req = requests.get("https://m7md1337.000webhostapp.com/2.php?id={}".format(idapp),headers={"m7md1337":"102"},verify=False)
     soo = json.loads(req.content)
     if soo["cc"] == "true":
         wget.download(soo["url"], soo["filename"])
@@ -33,7 +33,7 @@ def download(idapp):
 
 
 def get_versions(idd):
-    url = "https://tools.lancely.tech/apple/app-version/US/{}".format(idd)
+    url = "https://tools.lancely.tech/apple/app-version/US/{}".format(idd,verify=False)
 
     page = requests.get(url).text
     soup = BeautifulSoup(page, 'lxml')
@@ -68,7 +68,7 @@ def get_versions(idd):
 
 
 def byid(byyidd):
-    req1 = requests.get("https://itunes.apple.com/lookup?id={}".format(byyidd))
+    req1 = requests.get("https://itunes.apple.com/lookup?id={}".format(byyidd),verify=False)
     bbo22 = json.loads(req1.content)
     if bbo22["resultCount"] == 0:
         print("you but a wrong id try again or another way")
