@@ -1,4 +1,5 @@
-# get_ipa
+###### Note : The ipa is not decrypted 
+# get_ipa 
  easy way to get ipa from appstore
 ## ways to get an app
 - by search 
