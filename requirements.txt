@@ -1,6 +1,4 @@
+wget
 lxml
 requests
-wget
-bs4
-BeautifulSoup4
-BeautifulSoup
+beautifulsoup4
